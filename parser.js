@@ -26,6 +26,7 @@ var grammar = {
        ["left", "+", "-"],
        ["left", "*", "/"],
        ["left", "^","√"],
+       ["right", "%"],
        ["left", "UMINUS"]
     ],
  
