@@ -13,12 +13,11 @@ var grammar = {
           ["-",                       "return '-'"],
           ["\\+",                     "return '+'"],
           ["\\^",                     "return '^'"],
-          ["%",                       "return '%'"],
+          ["√",                       "return '√'"], 
           ["\\(",                     "return '('"],
           ["\\)",                     "return ')'"],
           ["$",                       "return 'EOF'"], 
-          ["√",                       "return '√'"], 
-          ["calculate",                       "return 'CALCULATE'"]
+          ["calculate",               "return 'CALCULATE'"]
        ]
     },
  
@@ -26,7 +25,6 @@ var grammar = {
        ["left", "+", "-"],
        ["left", "*", "/"],
        ["left", "^","√"],
-       ["right", "%"],
        ["left", "UMINUS"]
     ],
  
@@ -38,7 +36,6 @@ var grammar = {
           ["e - e",  "$$ = $1-$3"],
           ["e * e",  "$$ = $1*$3"],
           ["e / e",  "$$ = $1/$3"],
-          ["e %",    "$$ = $1/100"],
           ["e ^ e",  "$$ = Math.pow($1, $3)"],
           ["- e",    "$$ = -$2", {"prec": "UMINUS"}],
           ["+ e",    "$$ = +$2", {"prec": "UMINUS"}],
